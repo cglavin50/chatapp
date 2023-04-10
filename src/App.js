@@ -99,7 +99,7 @@ function ChatMessage(props) { // chatMsg child component to display each msg in 
   // need to display sent and received msgs differently
   const messageClass = uid === auth.currentUser.uid ? 'sent' : 'received';
   return (
-    <div className={'message ${messageClass}'}>
+    <div className={'message ' + messageClass}>
       <p>{text}</p>
     </div> 
   )
