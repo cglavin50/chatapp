@@ -29,6 +29,8 @@ function App() {
   return (
     <div className="App">
       <header>
+        <h1>Georgetown Chat App</h1>
+        <SignOut />
        
       </header>
       <section>
@@ -51,7 +53,7 @@ function SignIn() {
 
 function SignOut() {
   return auth.currentUser && (
-    <button onClick={() => auth.SignOut()}>Sign Out</button>
+    <button onClick={() => auth.signOut()}>Sign Out</button>
   ) // basic signout button from the auth library
 }
 
