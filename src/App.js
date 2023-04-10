@@ -43,7 +43,14 @@ function App() {
 function SignIn() {
   const signInWithGoogle = () => {
     const provider = new firebase.auth.GoogleAuthProvider(); // use Google authentication
-    auth.signInWithPopup(provider); // firebase auth library to open up a popup window using google authentication as defined above
+    auth.signInWithPopup(provider) // firebase auth library to open up a popup window using google authentication as defined above
+    .then(() =>{
+      if (auth.currentUser.email.split('@')[1] != "georgetown.edu")
+      {
+        console.log("Non-georgetown email used");
+        auth.signOut();
+      }
+    });
   }
 
   return (
