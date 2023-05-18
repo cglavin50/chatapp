@@ -90,6 +90,7 @@ function ChatRoom() {
     dummyRef.current.scrollIntoView({behavior:'smooth'}) // scroll to the 'dummyRef', span below the messages
   }
 
+  dummyRef.current.scrollIntoView({behavior:'smooth'}); // make sure to focus on latest message on render
   return ( // map each msg in messages to a ChatMessage object, with msg id and msg as the values
     <>
       <main>
