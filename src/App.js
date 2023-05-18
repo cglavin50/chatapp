@@ -87,15 +87,15 @@ function ChatRoom() {
     });
 
     setFormValue("") // reset form value
-    dummyRef.current.scrollIntoView({behavior:'smooth'})
+    dummyRef.current.scrollIntoView({behavior:'smooth'}) // scroll to the 'dummyRef', span below the messages
   }
 
   return ( // map each msg in messages to a ChatMessage object, with msg id and msg as the values
     <>
       <main>
         {messages && messages.map(msg => <ChatMessage key={msg.id} message={msg}/>)} 
+        <span ref={dummyRef}></span>
       </main>
-      <span ref={dummyRef}></span>
       <form onSubmit={sendMessage}>
         <input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="Send a message..."/>
         <button type="submit" disabled={!formValue}>🕊️</button>
