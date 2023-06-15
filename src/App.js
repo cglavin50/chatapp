@@ -31,7 +31,6 @@ function App() {
       <header>
         <h1>Georgetown Chat App</h1>
         <SignOut />
-       
       </header>
       <section>
         {user ? <ChatRoom /> : <SignIn />} 
@@ -102,7 +101,7 @@ function ChatRoom() {
         <button type="submit" disabled={!formValue}>🕊️</button>
       </form>
     </>
-  ) // listenm to the on change event, and use that to set form value
+  ) // listen to the on change event, and use that to set form value
 }
 
 function ChatMessage(props) { // chatMsg child component to display each msg in the chat
